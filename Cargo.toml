@@ -1,0 +1,59 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/aether-primitives",
+    "crates/aether-consensus",
+    "crates/aether-privacy",
+    "crates/aether-sharding",
+    "crates/aether-net",
+    "crates/aether-wallet",
+    "crates/aether-node",
+]
+
+[workspace.package]
+version = "1.4.0"
+edition = "2021"
+rust-version = "1.82.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/aethercore-org/aethercore"
+authors = ["AetherCore Core Developers <dev@aethercore.org>"]
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+unused_must_use = "deny"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "warn"
+arithmetic_side_effects = "deny"
+cast_possible_truncation = "warn"
+
+[workspace.dependencies]
+aether-primitives = { path = "crates/aether-primitives" }
+aether-consensus = { path = "crates/aether-consensus" }
+aether-privacy = { path = "crates/aether-privacy" }
+aether-sharding = { path = "crates/aether-sharding" }
+aether-net = { path = "crates/aether-net" }
+aether-wallet = { path = "crates/aether-wallet" }
+blake3 = "1.5"
+curve25519-dalek = { version = "4.1", default-features = false, features = ["alloc", "rand_core"] }
+blst = "0.3"
+rayon = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "2.0"
+tokio = { version = "1.41", features = ["rt-multi-thread", "net", "sync", "time", "macros"] }
+zeroize = { version = "1.8", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+overflow-checks = true
+
+[profile.mobile-battery]
+inherits = "release"
+opt-level = "z"
+lto = "fat"
+strip = "symbols"

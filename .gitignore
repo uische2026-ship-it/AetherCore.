@@ -1,0 +1,23 @@
+# Rust / Cargo build artifacts
+/target/
+**/*.rs.bk
+*.pdb
+
+# Mobile ARM64 cross-compilation artifacts
+/dist-mobile/
+/android-ndk-out/
+/ios-xcframework/
+
+# Local validator state, Utreexo shard snapshots & keystores
+*.utreexo
+*.sharddb
+*.key
+validator_secret.toml
+aetherd.pid
+
+# OS & Editor files
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/

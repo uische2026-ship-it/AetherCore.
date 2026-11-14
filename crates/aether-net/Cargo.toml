@@ -1,0 +1,16 @@
+[package]
+name = "aether-net"
+description = "0-RTT QUIC P2P gossip transport with Dandelion++ stem/fluff origin-IP anonymization (replaces Bitcoin Core src/net_processing.cpp)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+aether-primitives.workspace = true
+blake3.workspace = true
+serde.workspace = true
+tokio.workspace = true

@@ -1,0 +1,19 @@
+[package]
+name = "aether-sharding"
+description = "Horizontal State & Execution Sharding, 48MB Utreexo Shard Accumulators, and atomic Cross-Shard Merkle Receipts"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+aether-primitives.workspace = true
+aether-consensus.workspace = true
+aether-privacy.workspace = true
+blake3.workspace = true
+rayon.workspace = true
+serde.workspace = true
+thiserror.workspace = true

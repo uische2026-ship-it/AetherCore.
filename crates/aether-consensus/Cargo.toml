@@ -1,0 +1,18 @@
+[package]
+name = "aether-consensus"
+description = "Mobile-First Proof-of-Stake (mPoS) engine with Ristretto255 VRF sortition and BLS12-381 finality (replaces Bitcoin Core src/pow.cpp)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+aether-primitives.workspace = true
+blake3.workspace = true
+blst.workspace = true
+curve25519-dalek.workspace = true
+serde.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,15 @@
+[package]
+name = "aether-primitives"
+description = "Core UTXO, Confidential Transaction, Shard Header, and Merkle-Patricia primitives (port of Bitcoin Core src/primitives)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+blake3.workspace = true
+serde.workspace = true
+zeroize.workspace = true

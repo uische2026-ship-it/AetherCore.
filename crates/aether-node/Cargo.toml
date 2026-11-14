@@ -1,0 +1,23 @@
+[package]
+name = "aether-node"
+description = "Ultra-lightweight Rust validator & shard node binary (aetherd) replacing Bitcoin Core bitcoind"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "aetherd"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+aether-primitives.workspace = true
+aether-consensus.workspace = true
+aether-privacy.workspace = true
+aether-sharding.workspace = true
+aether-net.workspace = true
+aether-wallet.workspace = true
+tokio.workspace = true
